@@ -9,7 +9,7 @@ I'm still thinking about various kinds of mechanics and assets, but generally:
 In this game you need to shoot to some enemies in order to get the best score as possible.  
 You don't need to move around the place, but it's important to have 360° vision because,  
 sometimes, you'll be surrounded by ugly foes! 
-You can see a demo preview [Here]()
+You can see a demo preview [Here](https://www.youtube.com/watch?v=os6DOAQWLZk)
 
 ## How this Repo works
 

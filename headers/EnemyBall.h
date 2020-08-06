@@ -32,21 +32,27 @@ public:
 	virtual void Tick(float DeltaTime) override;
 
 	//----------------------------------------//
+
+	// Value used to increase the general score (future use)
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int32 ScoreValue;
 
 	UFUNCTION(BlueprintCallable)
 	void DoAction();
 
+	// This function provides the visibility of the instance
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
 	void Despawn();
 
+	// This function provides the visibility of the instance
 	UFUNCTION(BlueprintCallable, BlueprintImplementableEvent)
 	void Respawn();
 	
+	// This function simply moves the instance given a TVector
 	UFUNCTION(BlueprintCallable)
 	void Locate(const FVector& vec);
 
+	// Used when an unused instance needs to be reused
 	UFUNCTION(BlueprintCallable)
 	void RestoreHealth();
 };

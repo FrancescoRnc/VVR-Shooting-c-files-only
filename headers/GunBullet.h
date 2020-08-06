@@ -16,6 +16,7 @@ public:
 	// Sets default values for this actor's properties
 	AGunBullet();
 
+	// Here are some stats that can be modified by any child of this
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float DamageValue;
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
@@ -38,6 +39,7 @@ public:
 
 
 	// Functions
+	// This makes the instance in/visible, un/collidable and tick dis/enabled
 	UFUNCTION(BlueprintImplementableEvent, BlueprintCallable)
 	void SetNewAvailability(const bool value);
 

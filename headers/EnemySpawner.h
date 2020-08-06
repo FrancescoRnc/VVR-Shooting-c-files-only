@@ -12,6 +12,7 @@
 #include "Engine.h"
 #include "EnemySpawner.generated.h"
 
+// Struct used to show a wave given some infos
 USTRUCT(BlueprintType)
 struct VR_SHOOTING_API FWaveDispositionInfo
 {
@@ -21,16 +22,18 @@ struct VR_SHOOTING_API FWaveDispositionInfo
 
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	int32 Length;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	FVector StartLocationOffset = FVector(0, 0, 50);
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float MaxDegreeAngle = 90.f;
+
 	UPROPERTY(EditAnywhere, BlueprintReadWrite)
 	float MaxRadius = 500.f;
-
-	//FWaveDispositionInfo();
 };
 
+// This class provides to create an array of enemies
 UCLASS()
 class VR_SHOOTING_API AEnemySpawner : public AActor
 {
@@ -42,13 +45,8 @@ public:
 
 	UPROPERTY(EditDefaultsOnly, Category = "Edit")
 	TSubclassOf<AActor> BallsClass;
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	//TArray<AEnemyBall*> Balls;
-	//UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	//TQueue<AEnemyBall*> BallsQueue;
+
 	TCircularQueue<AEnemyBall*> BallsQueue{10};
-	UPROPERTY(EditAnywhere, BlueprintReadWrite)
-	int32 CurrentWaveCount;
 
 protected:
 	// Called when the game starts or when spawned
@@ -67,6 +65,7 @@ public:
 	void DespawnLast(AEnemyBall* const &ball);
 	void DespawnLast_Implementation(AEnemyBall* const &ball);
 
+	// Adds some enemies to the current array
 	UFUNCTION(BlueprintCallable)
 	void CreateBalls(const int32 amount);
 };
